@@ -6,7 +6,6 @@ import { addTodo } from "../../../redux/modules/todos.js";
 
 const Form = () => {
   const id = nextId();
-  const dispatch = useDispatch();
 
   const [todo, setTodo] = useState({
     id: 0,
@@ -20,6 +19,8 @@ const Form = () => {
     setTodo({ ...todo, [name]: value });
   };
 
+  const dispatch = useDispatch();
+  
   const onSubmitHandler = (event) => {
     event.preventDefault();
     if (todo.title.trim() === "" || todo.body.trim() === "") return;
